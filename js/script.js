@@ -43,3 +43,21 @@
       observer.observe(el);
     });
 })();
+// Handle mailto links with fallback to webmail
+function handleMailto(e, email) {
+  e.preventDefault();
+
+  const mailtoUrl = `mailto:${email}`;
+  const webmailUrl = `https://mail.google.com/mail/?view=cm&to=${email}`;
+
+  // Try opening mailto
+  const start = Date.now();
+  window.location = mailtoUrl;
+
+  // If nothing happened after ~500ms, assume no mail app → open Gmail
+  setTimeout(() => {
+    if (Date.now() - start < 500) {
+      window.open(webmailUrl, "_blank");
+    }
+  }, 250);
+}

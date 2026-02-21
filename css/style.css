@@ -598,8 +598,6 @@ input {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin: 0 auto;
-  width: 327px;
 }
 
 .cta-primary {
@@ -613,7 +611,6 @@ input {
   font-weight: 600;
   font-size: 1rem;
   transition: opacity 0.3s;
-  width: 100%;
 }
 .cta-primary:hover {
   opacity: 0.9;
@@ -635,7 +632,6 @@ input {
   font-weight: 600;
   font-size: 1em;
   transition: background 0.3s;
-  width: 100%;
 }
 .cta-secondary:hover {
   background: var(--secondary);
@@ -821,9 +817,6 @@ input {
   .cta-secondary {
     padding: 1.25rem 2.5rem;
     width: auto;
-  }
-  .cta-buttons {
-    width: 100%;
   }
 }
 @media (min-width: 1024px) {
