@@ -17,7 +17,7 @@
   --secondary-fg: hsl(60, 15%, 85%);
   --muted: hsl(160, 5%, 16%);
   --muted-fg: hsl(160, 8%, 55%);
-  --border: hsl(160, 8%, 18%);
+  --border: hsl(156, 8%, 24%);
   --border-half: hsla(160, 8%, 18%, 0.5);
   --primary-20: hsla(158, 64%, 42%, 0.2);
   --primary-10: hsla(158, 64%, 42%, 0.1);
@@ -76,7 +76,7 @@ input {
 
 /* ===== Utilities ===== */
 .container {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -173,7 +173,7 @@ input {
   height: 5rem;
 }
 .nav-logo {
-  height: 15px;
+  height: 12px;
   width: auto;
   filter: brightness(0) invert(1);
 }
@@ -239,6 +239,7 @@ input {
   margin-top: 0.5rem;
   text-align: center;
   padding: 0.75rem 1.5rem;
+  color: var(--primary-fg);
 }
 
 @media (min-width: 768px) {
@@ -295,7 +296,7 @@ input {
 .hero-content {
   position: relative;
   z-index: 10;
-  max-width: 64rem;
+  max-width: 90rem;
   margin: 0 auto;
   text-align: center;
 }
@@ -320,18 +321,18 @@ input {
   text-transform: uppercase;
 }
 .hero h1 {
-  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-size: clamp(2.5rem, 5.5vw, 6rem);
   font-weight: 700;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: 0.015em;
   margin-bottom: 2rem;
 }
 .hero-sub {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, 2.1vw, 1.25rem);
   color: var(--muted-fg);
   max-width: 40rem;
-  margin: 0 auto 3rem;
-  font-weight: 300;
+  margin: 0 auto 4rem;
+  font-weight: 400;
   line-height: 1.7;
 }
 .hero-cta {
@@ -381,7 +382,7 @@ input {
 
 /* ===== Section Shared ===== */
 .section {
-  padding: 10rem 0;
+  padding: 5rem 0;
   position: relative;
 }
 .section-label {
@@ -396,7 +397,7 @@ input {
 .section-heading {
   font-size: clamp(2rem, 5vw, 3.75rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.41;
   color: var(--fg);
 }
 .section-sub {
@@ -420,6 +421,13 @@ input {
   .card-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+  }
+  .section-heading {
+    line-height: 1.1;
+  }
+  .section {
+    padding: 10rem 0;
+    position: relative;
   }
 }
 
@@ -510,7 +518,7 @@ input {
   color: var(--primary);
 }
 .step-number {
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", serif;
   font-size: 2.25rem;
   font-weight: 700;
   color: var(--border);
@@ -636,7 +644,7 @@ input {
   gap: 1rem;
   margin-bottom: 3rem;
 }
-@media (min-width: 640px) {
+@media (min-width: 992px) {
   .cta-buttons {
     flex-direction: row;
     justify-content: center;
@@ -711,6 +719,7 @@ input {
   gap: 2rem;
 }
 .footer-links h4 {
+  font-family: "Inter", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -731,6 +740,7 @@ input {
 }
 
 .footer-newsletter h4 {
+  font-family: "Inter", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 1rem;
