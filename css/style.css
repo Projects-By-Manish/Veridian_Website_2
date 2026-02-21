@@ -288,7 +288,7 @@ input {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 9999px;
   border: 1px solid var(--primary-20);
   background: var(--glass);
@@ -598,20 +598,22 @@ input {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin: 0 auto;
+  width: 327px;
 }
 
 .cta-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1.25rem 2.5rem;
+  padding: 1rem 1rem;
   border-radius: 0.75rem;
   background: var(--hero-gradient);
   color: var(--primary-fg);
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1rem;
   transition: opacity 0.3s;
+  width: 100%;
 }
 .cta-primary:hover {
   opacity: 0.9;
@@ -626,13 +628,14 @@ input {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1.25rem 2.5rem;
+  padding: 1rem 1rem;
   border-radius: 0.75rem;
   border: 1px solid var(--border);
   color: var(--fg);
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1em;
   transition: background 0.3s;
+  width: 100%;
 }
 .cta-secondary:hover {
   background: var(--secondary);
@@ -796,6 +799,9 @@ input {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+  .hero-badge {
+    padding: 0.5rem 1rem;
+  }
   .section-heading {
     font-size: 3rem;
     line-height: 1.41;
@@ -810,6 +816,14 @@ input {
   }
   .cta-buttons {
     flex-direction: row;
+  }
+  .cta-primary,
+  .cta-secondary {
+    padding: 1.25rem 2.5rem;
+    width: auto;
+  }
+  .cta-buttons {
+    width: 100%;
   }
 }
 @media (min-width: 1024px) {
