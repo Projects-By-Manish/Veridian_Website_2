@@ -54,7 +54,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", serif;
+  font-family: serif;
 }
 
 a {
@@ -321,19 +321,19 @@ input {
   text-transform: uppercase;
 }
 .hero h1 {
-  font-size: clamp(2.5rem, 5.5vw, 6rem);
+  font-size: 6rem;
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: 0.015em;
+  line-height: 1;
+  letter-spacing: -0.025em;
   margin-bottom: 2rem;
 }
 .hero-sub {
-  font-size: clamp(1rem, 2.1vw, 1.25rem);
+  font-size: 1.25rem;
   color: var(--muted-fg);
-  max-width: 40rem;
+  max-width: 42rem;
   margin: 0 auto 4rem;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.28;
 }
 .hero-cta {
   display: inline-flex;
@@ -395,7 +395,7 @@ input {
   display: block;
 }
 .section-heading {
-  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-size: 3.75rem;
   font-weight: 700;
   line-height: 1.41;
   color: var(--fg);
@@ -423,7 +423,7 @@ input {
     gap: 2rem;
   }
   .section-heading {
-    line-height: 1.1;
+    line-height: 1;
   }
   .section {
     padding: 10rem 0;
@@ -555,7 +555,7 @@ input {
 }
 
 .about-story h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 2rem;
@@ -628,9 +628,9 @@ input {
   filter: blur(150px);
 }
 .cta-section h2 {
-  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-size: 4.5rem;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1;
   margin-bottom: 2rem;
 }
 .cta-section .section-sub {
