@@ -241,12 +241,13 @@ input {
 /* ===== Hero ===== */
 .hero {
   position: relative;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 5rem;
+  padding-top: 128px;
+  padding-bottom: 3rem;
+  min-height: auto;
 }
 .hero-bg-orb1 {
   position: absolute;
@@ -292,7 +293,7 @@ input {
   border-radius: 9999px;
   border: 1px solid var(--primary-20);
   background: var(--glass);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .hero-badge svg {
   color: var(--primary);
@@ -305,11 +306,14 @@ input {
   text-transform: uppercase;
 }
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.20rem;
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.025em;
-  margin-bottom: 2rem;
+  line-height: 0.75;
+  letter-spacing: -0.015em;
+  margin-bottom: 3rem;
+}
+.hero-spacing{
+  margin: 12px 0 0;
 }
 .hero-sub {
   font-size: 1.125rem;
@@ -317,7 +321,7 @@ input {
   max-width: 42rem;
   margin: 0 auto 3rem;
   font-weight: 300;
-  line-height: 1.625;
+  line-height: 1.5;
 }
 .hero-cta {
   display: inline-flex;
@@ -341,7 +345,7 @@ input {
   transform: translateX(4px);
 }
 .hero-trust {
-  margin-top: 4rem;
+  margin-top: 1rem;
   padding-top: 2rem;
 }
 .hero-trust p {
@@ -353,7 +357,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 10px 3rem;
   flex-wrap: wrap;
 }
 .trust-items span {
@@ -381,14 +385,14 @@ input {
 .section-heading {
   font-size: 2.25rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.05;
   color: var(--fg);
 }
 .section-sub {
   margin-top: 1.5rem;
   font-size: 1.125rem;
   color: var(--muted-fg);
-  line-height: 1.7;
+  line-height: 1.5;
   max-width: 48rem;
 }
 .section-header {
@@ -428,6 +432,7 @@ input {
   font-weight: 700;
   color: var(--fg);
   margin-bottom: 1rem;
+  line-height: 1.25;
 }
 .card p {
   font-size: 0.875rem;
@@ -512,7 +517,7 @@ input {
 .about-story h2 {
   font-size: 2.25rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.05;
   margin-bottom: 2rem;
 }
 .about-story .prose {
@@ -522,7 +527,7 @@ input {
 }
 .about-story .prose p {
   color: var(--muted-fg);
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 .value-card {
@@ -585,7 +590,7 @@ input {
 .cta-section h2 {
   font-size: 2.25rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.05;
   margin-bottom: 2rem;
 }
 .cta-section .section-sub {
@@ -788,15 +793,30 @@ input {
     flex-direction: row;
     justify-content: space-between;
   }
+  .hero{
+    padding-top: 5rem;
+    padding-bottom: 0;
+    min-height: 100vh;
+  }
   .hero h1 {
     font-size: 4.5rem;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin-bottom: 2rem;
+  }
+  .hero-spacing{
+    margin: 0;
   }
   .hero-sub {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+  .hero-trust {
+    margin-top: 4rem;
+  }
   .hero-badge {
     padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
   }
   .section-heading {
     font-size: 3rem;
@@ -817,6 +837,12 @@ input {
   .cta-secondary {
     padding: 1.25rem 2.5rem;
     width: auto;
+  }
+  .trust-items {
+    gap: 3rem;
+  }
+  .card h3 {
+    line-height: 1.6;
   }
 }
 @media (min-width: 1024px) {
@@ -839,7 +865,6 @@ input {
   }
   .cta-section h2 {
     font-size: 4.5rem;
-    line-height: 1;
   }
 }
 @media (min-width: 1400px) {
