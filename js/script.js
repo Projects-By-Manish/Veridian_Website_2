@@ -1,7 +1,9 @@
-// Mobile menu toggle
+// ===== Mobile menu toggle =====
 (function () {
   var toggle = document.querySelector(".mobile-toggle");
   var menu = document.getElementById("mobile-menu");
+  if (!toggle || !menu) return;
+
   var menuIcon = toggle.querySelector(".menu-icon");
   var closeIcon = toggle.querySelector(".close-icon");
 
@@ -12,7 +14,6 @@
     closeIcon.style.display = isOpen ? "block" : "none";
   });
 
-  // Close on link click
   menu.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {
       menu.classList.remove("open");
@@ -23,7 +24,7 @@
   });
 })();
 
-// Intersection Observer for scroll animations
+// ===== Intersection Observer scroll animations =====
 (function () {
   var observer = new IntersectionObserver(
     function (entries) {
@@ -38,91 +39,148 @@
   );
 
   document
-    .querySelectorAll(".fade-in, .fade-in-left, .fade-in-right")
+    .querySelectorAll(
+      ".fade-in, .fade-in-left, .fade-in-right, .anim-fade-left, .anim-fade-right",
+    )
     .forEach(function (el) {
       observer.observe(el);
     });
 })();
-// Handle mailto links with fallback to webmail
+
+// ===== Handle mailto links =====
 function handleMailto(e, email) {
   e.preventDefault();
-
-  const mailtoUrl = `mailto:${email}`;
-  const webmailUrl = `https://mail.google.com/mail/?view=cm&to=${email}`;
-
-  // Try opening mailto
-  const start = Date.now();
+  var mailtoUrl = "mailto:" + email;
+  var webmailUrl = "https://mail.google.com/mail/?view=cm&to=" + email;
+  var start = Date.now();
   window.location = mailtoUrl;
-
-  // If nothing happened after ~500ms, assume no mail app → open Gmail
-  setTimeout(() => {
+  setTimeout(function () {
     if (Date.now() - start < 500) {
       window.open(webmailUrl, "_blank");
     }
   }, 250);
 }
-// Mobile menu toggle
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-hamburger.addEventListener("click", () => {
-  const isOpen = mobileMenu.classList.toggle("open");
-  hamburger.textContent = isOpen ? "✕" : "☰";
-  hamburger.setAttribute("aria-expanded", String(isOpen));
-  hamburger.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-});
-function closeMobile() {
-  mobileMenu.classList.remove("open");
-  hamburger.textContent = "☰";
-  hamburger.setAttribute("aria-expanded", "false");
-  hamburger.setAttribute("aria-label", "Open menu");
-}
 
-// Smooth scroll animations
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 },
-  );
-  document
-    .querySelectorAll(".anim-fade-left, .anim-fade-right")
-    .forEach((el) => {
-      observer.observe(el);
-    });
-} else {
-  document
-    .querySelectorAll(".anim-fade-left, .anim-fade-right")
-    .forEach((el) => {
-      el.classList.add("visible");
-    });
-}
-
-// Form submission
-const form = document.getElementById("contactForm");
-const formSuccess = document.getElementById("formSuccess");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  // Here you would normally send data to a backend or form service
-  // For now we show the success state
-  form.style.display = "none";
-  formSuccess.classList.add("visible");
-});
-
-// Contact form submission (contact.html)
+// ===== Contact form submission =====
 (function () {
   var form = document.getElementById("contactForm");
   var formSuccess = document.getElementById("formSuccess");
-  if (form && formSuccess) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      form.style.display = "none";
-      formSuccess.classList.add("visible");
+  if (!form || !formSuccess) return;
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    form.style.display = "none";
+    formSuccess.classList.add("visible");
+  });
+})();
+
+// ===== About Page: Image Slider =====
+(function () {
+  var track = document.getElementById("sliderTrack");
+  var dotsContainer = document.getElementById("sliderDots");
+  var prevBtn = document.getElementById("sliderPrev");
+  var nextBtn = document.getElementById("sliderNext");
+
+  if (!track || !dotsContainer || !prevBtn || !nextBtn) return;
+
+  var slides = Array.from(track.querySelectorAll(".slide-card"));
+  var current = 0;
+  var perView = 1;
+
+  function getPerView() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 640) return 2;
+    return 1;
+  }
+
+  function totalPages() {
+    return Math.ceil(slides.length / perView);
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = "";
+    var pages = totalPages();
+    for (var i = 0; i < pages; i++) {
+      var btn = document.createElement("button");
+      btn.className = "slider-dot" + (i === current ? " active" : "");
+      btn.setAttribute("role", "tab");
+      btn.setAttribute("aria-label", "Go to slide group " + (i + 1));
+      btn.setAttribute("aria-selected", i === current ? "true" : "false");
+      (function (idx) {
+        btn.addEventListener("click", function () {
+          goTo(idx);
+        });
+      })(i);
+      dotsContainer.appendChild(btn);
+    }
+  }
+
+  function updateDots() {
+    var dots = dotsContainer.querySelectorAll(".slider-dot");
+    dots.forEach(function (d, i) {
+      d.classList.toggle("active", i === current);
+      d.setAttribute("aria-selected", i === current ? "true" : "false");
     });
   }
+
+  function goTo(idx) {
+    var pages = totalPages();
+    current = Math.max(0, Math.min(idx, pages - 1));
+    var gap = 20; // 1.25rem gap
+    var slideWidth = slides[0].offsetWidth + gap;
+    track.style.transform =
+      "translateX(-" + current * perView * slideWidth + "px)";
+    updateDots();
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current >= pages - 1;
+  }
+
+  function init() {
+    perView = getPerView();
+    current = 0;
+    buildDots();
+    goTo(0);
+  }
+
+  prevBtn.addEventListener("click", function () {
+    goTo(current - 1);
+  });
+  nextBtn.addEventListener("click", function () {
+    goTo(current + 1);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") goTo(current - 1);
+    if (e.key === "ArrowRight") goTo(current + 1);
+  });
+
+  var touchStartX = 0;
+  track.addEventListener(
+    "touchstart",
+    function (e) {
+      touchStartX = e.touches[0].clientX;
+    },
+    { passive: true },
+  );
+  track.addEventListener(
+    "touchend",
+    function (e) {
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        goTo(diff > 0 ? current + 1 : current - 1);
+      }
+    },
+    { passive: true },
+  );
+
+  var resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      var newPer = getPerView();
+      if (newPer !== perView) init();
+      else goTo(current);
+    }, 150);
+  });
+
+  init();
 })();
