@@ -245,7 +245,7 @@ input {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 112px;
+  padding-top: 128px;
   min-height: auto;
 }
 .hero-bg-orb1 {
@@ -292,7 +292,7 @@ input {
   border-radius: 9999px;
   border: 1px solid var(--primary-20);
   background: var(--glass);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .hero-badge svg {
   color: var(--primary);
@@ -305,11 +305,11 @@ input {
   text-transform: uppercase;
 }
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 0.75;
   letter-spacing: -0.025em;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .hero-spacing{
   margin: 12px 0 0;
@@ -320,7 +320,7 @@ input {
   max-width: 42rem;
   margin: 0 auto 3rem;
   font-weight: 300;
-  line-height: 1.625;
+  line-height: 1.5;
 }
 .hero-cta {
   display: inline-flex;
@@ -798,6 +798,7 @@ input {
   .hero h1 {
     font-size: 4.5rem;
     line-height: 1;
+    margin-bottom: 2rem;
   }
   .hero-spacing{
     margin: 0;
@@ -811,6 +812,7 @@ input {
   }
   .hero-badge {
     padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
   }
   .section-heading {
     font-size: 3rem;
