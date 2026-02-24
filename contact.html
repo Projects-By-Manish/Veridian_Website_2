@@ -313,6 +313,7 @@
                       id="company"
                       name="company"
                       placeholder="Acme Inc."
+                      required
                     />
                   </div>
                 </div>
@@ -326,6 +327,7 @@
                     id="role"
                     name="role"
                     placeholder="VP Product, Head of Design…"
+                    required
                   />
                 </div>
 
@@ -334,7 +336,7 @@
                   <label class="form-label" for="stage"
                     >What best describes your current stage?</label
                   >
-                  <select class="form-select" id="stage" name="stage">
+                  <select class="form-select" id="stage" name="stage" required>
                     <option value="" disabled selected>Select a stage</option>
                     <option value="early">
                       Early stage / Pre-product market fit
@@ -407,6 +409,7 @@
                     >What prompted you to reach out?</label
                   >
                   <textarea
+                    required
                     class="form-textarea"
                     id="message"
                     name="message"

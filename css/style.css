@@ -306,13 +306,13 @@ input {
   text-transform: uppercase;
 }
 .hero h1 {
-  font-size: 2.20rem;
+  font-size: 2.2rem;
   font-weight: 700;
   line-height: 0.75;
   letter-spacing: -0.015em;
   margin-bottom: 3rem;
 }
-.hero-spacing{
+.hero-spacing {
   margin: 12px 0 0;
 }
 .hero-sub {
@@ -793,7 +793,7 @@ input {
     flex-direction: row;
     justify-content: space-between;
   }
-  .hero{
+  .hero {
     padding-top: 5rem;
     padding-bottom: 0;
     min-height: 100vh;
@@ -804,7 +804,7 @@ input {
     letter-spacing: -0.025em;
     margin-bottom: 2rem;
   }
-  .hero-spacing{
+  .hero-spacing {
     margin: 0;
   }
   .hero-sub {
@@ -895,7 +895,7 @@ input {
   color: var(--primary);
 }
 .contact-label {
-  color: var(--muted-fg);
+  color: var(--primary);
   font-family: "Inter", serif;
   font-size: 0.75rem;
   font-weight: 500;
@@ -1073,7 +1073,7 @@ input {
   padding: 2rem 1.75rem;
 }
 .contact-form-wrap h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", serif;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--fg);
@@ -1082,7 +1082,7 @@ input {
 
 .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
   margin-bottom: 1rem;
 }
@@ -1123,8 +1123,14 @@ input {
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus {
-  border-color: var(--primary-20);
-  box-shadow: 0 0 0 2px var(--primary-10);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+.form-input:valid,
+.form-textarea:valid,
+.form-select:valid {
+  background: var(--secondary);
+  color: white;
 }
 .form-select {
   appearance: none;
@@ -1283,6 +1289,12 @@ input {
   .contact-grid {
     grid-template-columns: 5fr 7fr;
     gap: 5rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
   .contact-hero h1 {
     font-size: 4.5rem;
