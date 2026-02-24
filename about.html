@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veridian Design Studio — Experience-Led Design for B2B & D2C</title>
+    <meta
+      name="description"
+      content="Veridian Design Studio simplifies complex product experiences, scales design systems, and aligns design with real business intent. India-based, globally trusted."
+    />
+    <meta name="author" content="Veridian Design Studio" />
+    <meta
+      property="og:title"
+      content="Veridian Design Studio — We Design Outcomes, Not Screens"
+    />
+    <meta
+      property="og:description"
+      content="Experience-led design studio helping B2B SaaS and D2C brands drive conversions, adoption, and growth through strategic design."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ===== Navbar ===== -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container navbar-inner">
+        <a href="index.html" aria-label="Veridian Design Studio home">
+          <img
+            class="nav-logo"
+            src="images/logo.png"
+            alt="Veridian Design Studio Logo"
+          />
+        </a>
+        <div class="nav-links" role="menubar">
+          <a href="#services" role="menuitem">Services</a>
+          <a href="#process" role="menuitem">Process</a>
+          <a href="javascript:void(0);" role="menuitem">About</a>
+          <a href="contact.html" role="menuitem">Contact</a>
+        </div>
+        <div class="nav-cta-wrap">
+          <a
+            href="https://cal.com/venkatesh-balasubramaniam"
+            target="_blank"
+            class="nav-cta"
+            >Start a conversation</a
+          >
+        </div>
+        <button
+          class="mobile-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="menu-icon"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="close-icon"
+            style="display: none"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" role="menu">
+        <a href="#services" role="menuitem">Services</a>
+        <a href="#process" role="menuitem">Process</a>
+        <a href="javascript:void(0);" role="menuitem">About</a>
+        <a href="contact.html" role="menuitem">Contact</a>
+        <a
+          href="https://cal.com/venkatesh-balasubramaniam"
+          class="nav-cta"
+          role="menuitem"
+          >Start a conversation</a
+        >
+      </div>
+    </nav>
+
+    <!-- ===== Main Content ===== -->
+    <main id="main-content"></main>
+
+    <!--    footer    -->
+    <footer class="footer fade-in" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="images/logo.png" alt="Veridian Design Studio Logo" />
+            <p>
+              Experience-led design studio helping B2B and D2C teams turn design
+              into measurable business outcomes.
+            </p>
+          </div>
+          <div class="footer-links">
+            <div>
+              <h4>Studio</h4>
+              <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="javascript:void(0);">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Connect</h4>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/veridian-design-studio/"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/veridiandesignstudio/"
+                    target="_blank"
+                    >Instagram</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="mailto:hello@veridiandesign.in"
+                    onclick="handleMailto(event, 'hello@veridiandesign.in')"
+                    >Email</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-newsletter">
+            <h4>Design Insights</h4>
+            <p>
+              Weekly insights on design strategy, CRO, and product thinking.
+            </p>
+            <form class="newsletter-form" onsubmit="event.preventDefault()">
+              <label for="newsletter-email" class="sr-only"
+                >Email address</label
+              >
+              <input
+                type="email"
+                id="newsletter-email"
+                placeholder="your@email.com"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Veridian Design Studio. All rights reserved.
+          </p>
+          <p>Crafted with intent in India 🇮🇳 · Working globally</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="js/script.js"></script>
+</html>
