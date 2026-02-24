@@ -176,6 +176,7 @@ input {
 .nav-links {
   display: none;
   align-items: center;
+  justify-content: center;
   gap: 2.5rem;
 }
 .nav-links a {
@@ -246,7 +247,7 @@ input {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 5rem;
+  padding-top: 112px;
 }
 .hero-bg-orb1 {
   position: absolute;
@@ -341,7 +342,7 @@ input {
   transform: translateX(4px);
 }
 .hero-trust {
-  margin-top: 4rem;
+  margin-top: 1rem;
   padding-top: 2rem;
 }
 .hero-trust p {
@@ -797,6 +798,9 @@ input {
   }
   .hero-badge {
     padding: 0.5rem 1rem;
+  }
+  .hero-trust {
+    margin-top: 4rem;
   }
   .section-heading {
     font-size: 3rem;
