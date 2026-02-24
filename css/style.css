@@ -306,7 +306,7 @@ input {
   text-transform: uppercase;
 }
 .hero h1 {
-  font-size: 2.25rem;
+  font-size: 2.20rem;
   font-weight: 700;
   line-height: 0.75;
   letter-spacing: -0.015em;
@@ -385,14 +385,14 @@ input {
 .section-heading {
   font-size: 2.25rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.05;
   color: var(--fg);
 }
 .section-sub {
   margin-top: 1.5rem;
   font-size: 1.125rem;
   color: var(--muted-fg);
-  line-height: 1.7;
+  line-height: 1.5;
   max-width: 48rem;
 }
 .section-header {
@@ -432,6 +432,7 @@ input {
   font-weight: 700;
   color: var(--fg);
   margin-bottom: 1rem;
+  line-height: 1.25;
 }
 .card p {
   font-size: 0.875rem;
@@ -516,7 +517,7 @@ input {
 .about-story h2 {
   font-size: 2.25rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.05;
   margin-bottom: 2rem;
 }
 .about-story .prose {
@@ -526,7 +527,7 @@ input {
 }
 .about-story .prose p {
   color: var(--muted-fg);
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 .value-card {
@@ -589,7 +590,7 @@ input {
 .cta-section h2 {
   font-size: 2.25rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.05;
   margin-bottom: 2rem;
 }
 .cta-section .section-sub {
@@ -840,6 +841,9 @@ input {
   .trust-items {
     gap: 3rem;
   }
+  .card h3 {
+    line-height: 1.6;
+  }
 }
 @media (min-width: 1024px) {
   .container {
@@ -861,7 +865,6 @@ input {
   }
   .cta-section h2 {
     font-size: 4.5rem;
-    line-height: 1;
   }
 }
 @media (min-width: 1400px) {
