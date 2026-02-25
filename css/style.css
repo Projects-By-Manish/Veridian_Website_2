@@ -1160,7 +1160,7 @@ input {
 }
 .checkbox-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 0.625rem;
   margin-bottom: 1rem;
 }
@@ -1703,6 +1703,12 @@ input {
   }
   .about-slider-heading {
     font-size: 2.5rem;
+  }
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.625rem;
+    margin-bottom: 1rem;
   }
 }
 @media (min-width: 1024px) {
