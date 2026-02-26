@@ -388,6 +388,13 @@ input {
   line-height: 1.05;
   color: var(--fg);
 }
+.section-heading-h2 {
+  margin: 2rem 0 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--fg);
+}
 .section-sub {
   margin-top: 1.5rem;
   font-size: 1.125rem;
@@ -1151,7 +1158,6 @@ input {
   -webkit-text-fill-color: var(--fg) !important;
 }
 
-
 .form-select {
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23718096' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -1479,11 +1485,8 @@ input {
   font-weight: 300;
 }
 .about-stats-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin-top: 3.5rem;
   border: 1px solid var(--border-half);
   border-radius: 1rem;
@@ -1491,28 +1494,50 @@ input {
   overflow: hidden;
 }
 .about-stat {
-  flex: 1;
-  min-width: 140px;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1rem;
   text-align: center;
   border-right: 1px solid var(--border-half);
+  border-bottom: 1px solid var(--border-half);
 }
-.about-stat:last-child {
+/* Remove right border on every 2nd cell (right column) */
+.about-stat:nth-child(2n) {
   border-right: none;
+}
+/* Remove bottom border on last two cells */
+.about-stat:nth-last-child(-n + 2) {
+  border-bottom: none;
 }
 .about-stat-number {
   font-family: serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
   font-weight: 700;
   color: var(--primary);
   line-height: 1;
   margin-bottom: 0.5rem;
+  word-break: break-word;
 }
 .about-stat-label {
   font-size: 0.8125rem;
   color: var(--muted-fg);
   font-weight: 400;
   line-height: 1.4;
+}
+/* 4-column layout from 640px up */
+@media (min-width: 640px) {
+  .about-stats-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .about-stat {
+    border-bottom: none;
+    border-right: 1px solid var(--border-half);
+    padding: 2rem 1.5rem;
+  }
+  .about-stat:nth-child(2n) {
+    border-right: 1px solid var(--border-half);
+  }
+  .about-stat:last-child {
+    border-right: none;
+  }
 }
 
 /* --- Values Strip --- */
