@@ -1141,7 +1141,7 @@ input {
   color: white;
 }
 /* Example to change the background to white and text to black */
-.form-input:autofill
+.form-input:autofill,
 .form-input:-webkit-autofill,
 .form-input:-webkit-autofill:hover,
 .form-input:-webkit-autofill:focus,
