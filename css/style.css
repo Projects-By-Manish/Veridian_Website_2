@@ -1248,7 +1248,7 @@ input {
   color: var(--primary);
 }
 .form-success h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--fg);
