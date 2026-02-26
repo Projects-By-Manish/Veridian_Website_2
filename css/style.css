@@ -668,7 +668,6 @@ input {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  max-width: 80%;
 }
 .footer-links h4 {
   font-family: "Inter", sans-serif;
@@ -689,6 +688,51 @@ input {
 }
 .footer-links a:hover {
   color: var(--fg);
+}
+
+.footer-newsletter h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.footer-newsletter > p {
+  font-size: 0.875rem;
+  color: var(--muted-fg);
+  margin-bottom: 1rem;
+}
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 22rem;
+  gap: 0.5rem;
+}
+.newsletter-form input {
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--fg);
+  outline: none;
+}
+.newsletter-form input::placeholder {
+  color: var(--muted-fg);
+}
+.newsletter-form input:focus {
+  box-shadow: 0 0 0 1px var(--primary-20);
+}
+.newsletter-form button {
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  background: var(--hero-gradient);
+  color: var(--primary-fg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+.newsletter-form button:hover {
+  opacity: 0.9;
 }
 
 .footer-bottom {
@@ -745,6 +789,9 @@ input {
   }
   .footer-grid {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .newsletter-form {
+    flex-direction: row;
   }
   .footer-bottom {
     flex-direction: row;
