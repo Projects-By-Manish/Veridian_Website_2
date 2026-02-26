@@ -1195,17 +1195,15 @@ input {
 }
 .checkbox-item input[type="checkbox"]:checked {
   border-color: var(--primary);
-  background: var(--primary-20);
+  background: var(--primary);
 }
 .checkbox-item input[type="checkbox"]:checked::after {
-  content: "✔";
-  color: var(--primary);
+  content: "\2713";
+  color: var(--secondary);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  background: var(--primary-10);
 }
 .checkbox-item span {
   font-size: 0.8125rem;
