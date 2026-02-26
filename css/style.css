@@ -703,8 +703,7 @@ input {
 }
 .newsletter-form {
   display: flex;
-  flex-direction: column;
-  max-width: 22rem;
+  flex-direction: row;
   gap: 0.5rem;
 }
 .newsletter-form input {
