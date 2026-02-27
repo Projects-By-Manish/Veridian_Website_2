@@ -389,10 +389,11 @@ input {
   color: var(--fg);
 }
 .section-heading-h2 {
+  font-family: "Inter", serif;
   margin: 2rem 0 2rem;
   font-size: 1.75rem;
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.25;
   color: var(--fg);
 }
 .section-sub {
@@ -1417,6 +1418,8 @@ input {
 }
 .founder-info-item span {
   font-size: 0.75rem;
+  line-height: 1.4;
+  display: block;
   color: var(--muted-fg);
 }
 
@@ -1579,6 +1582,11 @@ input {
   color: var(--secondary-fg);
   font-weight: 500;
 }
+
+.about-value-pill:nth-child(2n) {
+  display: none;
+}
+
 .about-value-pill-dot {
   width: 6px;
   height: 6px;
@@ -1762,6 +1770,9 @@ input {
 @media (min-width: 768px) {
   .about-tagline-inner h1 {
     font-size: 3.75rem;
+  }
+  .about-value-pill:nth-child(2n) {
+    display: inline-flex;
   }
   .about-slider-heading {
     font-size: 2.5rem;

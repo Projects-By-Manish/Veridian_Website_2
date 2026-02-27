@@ -83,8 +83,29 @@ function handleMailto(e, email) {
     },
     {
       id: "workEmail",
-      test: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
-      message: "Please enter a valid email address.",
+      test: (v) => {
+        const email = v.trim();
+        // Accept only business emails (exclude common free providers)
+        const businessEmailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const freeProviders = [
+          "gmail.com",
+          "yahoo.com",
+          "hotmail.com",
+          "outlook.com",
+          "aol.com",
+          "icloud.com",
+          "protonmail.com",
+          "zoho.com",
+          "mail.com",
+          "gmx.com",
+        ];
+        if (!businessEmailPattern.test(email)) return false;
+        const domain = email.split("@")[1]?.toLowerCase();
+        if (!domain) return false;
+        return !freeProviders.includes(domain);
+      },
+      message:
+        "Please enter your business/work email address (personal emails like Gmail, Yahoo, etc. are not accepted).",
     },
     {
       id: "company",
