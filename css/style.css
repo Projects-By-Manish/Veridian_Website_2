@@ -1211,6 +1211,19 @@ input {
   line-height: 1.4;
 }
 
+/* ===== Form Validation Styles ===== */
+.input-error {
+  border-color: hsl(0, 70%, 55%) !important;
+  box-shadow: 0 0 0 2px hsla(0, 70%, 55%, 0.2) !important;
+}
+.field-error {
+  font-size: 0.75rem;
+  color: hsl(0, 70%, 60%);
+  margin-top: 0.25rem;
+  display: block;
+  line-height: 1.4;
+}
+
 .form-submit {
   width: 100%;
   padding: 0.875rem 1.5rem;
