@@ -388,6 +388,13 @@ input {
   line-height: 1.05;
   color: var(--fg);
 }
+.section-heading-h2 {
+  margin: 2rem 0 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--fg);
+}
 .section-sub {
   margin-top: 1.5rem;
   font-size: 1.125rem;
@@ -513,7 +520,13 @@ input {
   gap: 4rem;
   align-items: start;
 }
-
+.about-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 0.75;
+  letter-spacing: -0.015em;
+  margin-bottom: 3rem;
+}
 .about-story h2 {
   font-size: 2.25rem;
   font-weight: 700;
@@ -1116,7 +1129,7 @@ input {
   border: 1px solid var(--border-half);
   border-radius: 0.5rem;
   padding: 0.625rem 0.875rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--fg);
   font-family: "Inter", sans-serif;
   outline: none;
@@ -1139,6 +1152,16 @@ input {
 .form-select:valid {
   background: var(--secondary);
   color: white;
+}
+/* Example to change the background to white and text to black */
+.form-input:autofill,
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus,
+.form-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--secondary) inset !important;
+  transition: background-color 5000s ease-in-out 0s; /* smooth transition workaround */
+  -webkit-text-fill-color: var(--fg) !important;
 }
 
 .form-select {
@@ -1206,7 +1229,7 @@ input {
   transform: translate(-50%, -50%);
 }
 .checkbox-item span {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: var(--muted-fg);
   line-height: 1.4;
 }
@@ -1481,11 +1504,8 @@ input {
   font-weight: 300;
 }
 .about-stats-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin-top: 3.5rem;
   border: 1px solid var(--border-half);
   border-radius: 1rem;
@@ -1493,28 +1513,50 @@ input {
   overflow: hidden;
 }
 .about-stat {
-  flex: 1;
-  min-width: 140px;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1rem;
   text-align: center;
   border-right: 1px solid var(--border-half);
+  border-bottom: 1px solid var(--border-half);
 }
-.about-stat:last-child {
+/* Remove right border on every 2nd cell (right column) */
+.about-stat:nth-child(2n) {
   border-right: none;
+}
+/* Remove bottom border on last two cells */
+.about-stat:nth-last-child(-n + 2) {
+  border-bottom: none;
 }
 .about-stat-number {
   font-family: serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
   font-weight: 700;
   color: var(--primary);
   line-height: 1;
   margin-bottom: 0.5rem;
+  word-break: break-word;
 }
 .about-stat-label {
   font-size: 0.8125rem;
   color: var(--muted-fg);
   font-weight: 400;
   line-height: 1.4;
+}
+/* 4-column layout from 640px up */
+@media (min-width: 640px) {
+  .about-stats-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .about-stat {
+    border-bottom: none;
+    border-right: 1px solid var(--border-half);
+    padding: 2rem 1.5rem;
+  }
+  .about-stat:nth-child(2n) {
+    border-right: 1px solid var(--border-half);
+  }
+  .about-stat:last-child {
+    border-right: none;
+  }
 }
 
 /* --- Values Strip --- */
