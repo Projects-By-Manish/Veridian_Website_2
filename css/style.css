@@ -1265,35 +1265,90 @@ input {
   opacity: 0.9;
 }
 
-.form-success {
-  display: none;
+/* ===== Success Modal ===== */
+.success-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: hsla(160, 10%, 4%, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.success-modal-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+.success-modal {
+  background: var(--card);
+  border: 1px solid var(--border-half);
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 100%;
   text-align: center;
-  padding: 3rem 1rem;
+  transform: translateY(24px) scale(0.97);
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+  opacity: 0;
+  position: relative;
 }
-.form-success.visible {
-  display: block;
+.success-modal-overlay.visible .success-modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
 }
-.form-success .success-icon {
-  width: 3rem;
-  height: 3rem;
+.success-modal .success-icon {
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
   background: var(--primary-20);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.25rem;
   color: var(--primary);
 }
-.form-success h3 {
-  font-family: "Inter", serif;
+.success-modal h3 {
+  font-family: "Inter", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--fg);
   margin-bottom: 0.75rem;
 }
-.form-success p {
+.success-modal p {
   font-size: 0.9rem;
   color: var(--muted-fg);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+.success-modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 2rem;
+  border-radius: 0.625rem;
+  background: var(--hero-gradient);
+  color: var(--primary-fg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  border: none;
+}
+.success-modal-close:hover {
+  opacity: 0.85;
+}
+/* Keep the old .form-success hidden — no longer used */
+.form-success {
+  display: none !important;
 }
 
 .contact-bg-orb1 {
@@ -1506,6 +1561,7 @@ input {
   margin: 0 auto 3rem;
   font-weight: 300;
 }
+
 .about-stats-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1748,6 +1804,87 @@ input {
   background: var(--primary);
   width: 20px;
   border-radius: 3px;
+}
+
+/* --- Co-Founders Section --- */
+
+/* Section-level intro: label + heading + subtext above the two cards */
+.cofounder-intro {
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto 4rem;
+}
+.cofounder-intro .section-label {
+  margin-bottom: 1rem;
+}
+.cofounder-intro .section-heading {
+  margin-bottom: 1rem;
+}
+.cofounder-intro .cofounder-sub {
+  font-size: 1rem;
+  color: var(--muted-fg);
+  line-height: 1.7;
+}
+
+/* Two-card grid — stacks on mobile, side by side at 900px+ */
+.cofounder-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+@media (min-width: 900px) {
+  .cofounder-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Each co-founder card — flex column so bio can push info grid down */
+.cofounder-card {
+  background: var(--card);
+  border: 1px solid var(--border-half);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+}
+.cofounder-card .founder-img-wrap {
+  margin-bottom: 1.5rem;
+}
+
+/* Photo inside the card — narrower than the old full-column photo */
+.cofounder-card .founder-img-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.cofounder-card .founder-img-inner {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  padding-bottom: 16px;
+  padding-right: 16px;
+  width: 100%;
+  max-width: 260px;
+}
+.cofounder-card .founder-img {
+  border-radius: 1rem;
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  box-shadow: var(--card-shadow);
+}
+
+/* Bio fills remaining card height so info grid pins to bottom */
+.cofounder-card .cofounder-bio {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.cofounder-card .cofounder-bio .founder-info-grid {
+  margin-top: auto;
+  padding-top: 2rem;
 }
 
 /* --- Founder Section overrides for about page --- */

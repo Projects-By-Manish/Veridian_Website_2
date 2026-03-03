@@ -406,8 +406,19 @@ function submitToServer(payload, form, formSuccess) {
         data = { success: false };
       }
       if (data.success) {
-        form.style.display = "none";
-        formSuccess.classList.add("visible");
+        // Reset all form fields
+        form.reset();
+        // Clear any lingering validation error states
+        form.querySelectorAll(".input-error").forEach(function (el) {
+          el.classList.remove("input-error");
+        });
+        form.querySelectorAll(".field-error").forEach(function (el) {
+          el.remove();
+        });
+        // Show the modal
+        showSuccessModal();
+        // Re-enable submit button with original text
+        resetSubmitBtn(submitBtn, originalText);
       } else {
         showServerError(
           form,
@@ -440,4 +451,42 @@ function showServerError(form, message) {
   err.className = "server-error field-error";
   err.textContent = message;
   form.appendChild(err);
+}
+
+// ===== Success Modal =====
+function showSuccessModal() {
+  var overlay = document.getElementById("successModal");
+  var closeBtn = document.getElementById("successModalClose");
+  if (!overlay) return;
+
+  // Show
+  overlay.classList.add("visible");
+  document.body.style.overflow = "hidden";
+
+  function closeModal() {
+    overlay.classList.remove("visible");
+    document.body.style.overflow = "";
+  }
+
+  // Close on button click
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeModal, { once: true });
+  }
+
+  // Close on overlay background click
+  overlay.addEventListener(
+    "click",
+    function (e) {
+      if (e.target === overlay) closeModal();
+    },
+    { once: true },
+  );
+
+  // Close on Escape key
+  document.addEventListener("keydown", function handler(e) {
+    if (e.key === "Escape") {
+      closeModal();
+      document.removeEventListener("keydown", handler);
+    }
+  });
 }

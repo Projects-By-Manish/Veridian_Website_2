@@ -225,9 +225,13 @@
                       <polyline points="22,6 12,13 2,6" />
                     </svg>
                     <a
-                      href="mailto:hello@veridiandesign.in"
+                      href="/cdn-cgi/l/email-protection#761e131a1a19360013041f121f17181213051f1118581f18"
                       onclick="handleMailto(event, 'hello@veridiandesign.in')"
-                      >hello@veridiandesign.in</a
+                      ><span
+                        class="__cf_email__"
+                        data-cfemail="ea828f868685aa9c8f98838e838b848e8f99838d84c48384"
+                        >[email&#160;protected]</span
+                      ></a
                     >
                   </div>
                   <div class="contact-link-row">
@@ -491,7 +495,7 @@
                 </li>
                 <li>
                   <a
-                    href="mailto:hello@veridiandesign.in"
+                    href="/cdn-cgi/l/email-protection#7f171a1313103f091a0d161b161e111b1a0c161811511611"
                     onclick="handleMailto(event, 'hello@veridiandesign.in')"
                     >Email</a
                   >
@@ -521,16 +525,52 @@
         <div class="footer-bottom">
           <p>
             &copy;
+            <script
+              data-cfasync="false"
+              src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+            ></script>
             <script>
               document.write(new Date().getFullYear());
             </script>
             Veridian Design Studio. All rights reserved.
           </p>
-          <p>Crafted with intent in India 🇮🇳 · Working globally</p>
+          <p>Crafted with intent. Delivered with clarity.</p>
         </div>
       </div>
     </footer>
 
     <script src="js/script.js"></script>
+
+    <!-- ===== Success Modal ===== -->
+    <div
+      class="success-modal-overlay"
+      id="successModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="successModalTitle"
+    >
+      <div class="success-modal">
+        <div class="success-icon" aria-hidden="true">
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <h3 id="successModalTitle">Message Sent</h3>
+        <p>
+          Thank you for reaching out. We'll be in touch within 1–2 business
+          days.
+        </p>
+        <button class="success-modal-close" id="successModalClose">Done</button>
+      </div>
+    </div>
   </body>
 </html>
