@@ -291,7 +291,7 @@ function submitToServer(payload, form, formSuccess) {
 
   // Apps Script requires no Content-Type header to avoid CORS preflight failure
   fetch(
-    "https://script.google.com/macros/s/AKfycbxnkCFa68DFWXQOvDzMLckZtFiYr7FbOZQ4P9_5liz6Yi87i5xRaLTdxIKBj03nb8gY8A/exec",
+    "https://script.google.com/macros/s/AKfycbyzsmnaiVC34_rYes_t8v59xxe8vXYlRqFFSJinBXyOwE1vai5BaxNdBmDXHuntqYTdjw/exec",
     {
       method: "POST",
       body: JSON.stringify(payload),
@@ -426,7 +426,7 @@ function showSuccessModal() {
       btn.textContent = "Subscribing…";
 
       fetch(
-        "https://script.google.com/macros/s/AKfycbxnkCFa68DFWXQOvDzMLckZtFiYr7FbOZQ4P9_5liz6Yi87i5xRaLTdxIKBj03nb8gY8A/exec",
+        "https://script.google.com/macros/s/AKfycbyzsmnaiVC34_rYes_t8v59xxe8vXYlRqFFSJinBXyOwE1vai5BaxNdBmDXHuntqYTdjw/exec",
         {
           method: "POST",
           body: JSON.stringify({ type: "newsletter", email: email }),
