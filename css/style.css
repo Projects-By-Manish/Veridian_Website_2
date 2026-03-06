@@ -437,6 +437,7 @@ input {
 /* Full-bleed tinted overlay for sections with overlapping backgrounds */
 .section-bg {
   position: absolute;
+  z-index: -1;
   inset: 0;
   background: hsla(160, 6%, 14%, 0.3);
 }
@@ -1330,6 +1331,8 @@ input {
 
 /* Co-founders section header */
 .cofounder-section-header {
+  margin: 0 auto 2.5rem;
+  text-align: center;
   margin-bottom: 2.5rem;
 }
 
@@ -1338,7 +1341,7 @@ input {
   font-size: 1.15rem;
   font-style: italic;
   color: var(--muted-fg);
-  max-width: 480px;
+  max-width: 700px;
   margin: 1.5rem auto 1.2rem;
   padding-left: 1.25rem;
   border-left: 2px solid var(--primary);
@@ -1348,7 +1351,7 @@ input {
   font-size: 0.95rem;
   font-style: normal;
   text-align: right;
-  max-width: 480px;
+  max-width: 700px;
   margin: -1rem auto 2.5rem;
   display: block;
 }
@@ -1435,7 +1438,7 @@ input {
   font-size: 1.125rem;
   color: var(--muted-fg);
   line-height: 1.5;
-  max-width: 640px;
+  max-width: 700px;
   margin: 2rem auto 0;
 }
 
@@ -1535,6 +1538,12 @@ input {
   .about-story h2 {
     font-size: 3rem;
     line-height: 1.1;
+  }
+  .founder-panel-images {
+    margin-bottom: 2.5rem;
+  }
+  .cofounder-section-header {
+    text-align: center;
   }
   .cta-section h2 {
     font-size: 3rem;
