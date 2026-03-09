@@ -1,5 +1,5 @@
 /* =============================================================================
-   Veridian Design Studio — style.css
+   Veridian Design Studio - style.css
    Sections:
      1.  Reset
      2.  Variables
@@ -15,8 +15,9 @@
     12.  CTA
     13.  Footer
     14.  Contact Page
-    15.  About Page — Founders
-    16.  Responsive
+    15.  About Page - Founders
+    16.  About page - Think Grid
+    17.  Responsive
    ============================================================================= */
 
 /* =============================================================================
@@ -1442,6 +1443,20 @@ input {
   margin: 2rem auto 0;
 }
 
+/* =============================================================================
+   16. Think grid - About page
+   ============================================================================= */
+
+/* How We Think grid */
+.think-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/* =============================================================================
+   17.  Responsive css
+   ============================================================================= */
+
 /* --- min-width: 700px — desktop founder gallery --- */
 @media (min-width: 700px) {
   .founder-panel-images {
@@ -1539,6 +1554,9 @@ input {
     font-size: 3rem;
     line-height: 1.1;
   }
+  .think-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   .founder-panel-images {
     margin-bottom: 2.5rem;
   }
@@ -1621,7 +1639,9 @@ input {
   .cta-section h2 {
     font-size: 4.5rem;
   }
-
+  .think-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .contact-grid {
     grid-template-columns: 5fr 7fr;
     gap: 5rem;
