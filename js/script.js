@@ -291,7 +291,7 @@ function submitToServer(payload, form, formSuccess) {
 
   // Apps Script requires no Content-Type header to avoid CORS preflight failure
   fetch(
-    "https://script.google.com/macros/s/AKfycbwGtlTzyHtdVLLIIhlKdjBpvMH9mSeUyoTuCt85zanFlQuXijjFQ9tqrDMYaBzGtYXqBA/exec",
+    "https://script.google.com/a/macros/veridiandesign.in/s/AKfycbwrAqAcNAxg1OE18QO94se73FVtSdUhUWXyTm9SbvrCtD8qTXk0JcsfDjg5YeOo4_Ll/exec",
     {
       method: "POST",
       body: JSON.stringify(payload),
@@ -426,7 +426,7 @@ function showSuccessModal() {
       btn.textContent = "Subscribing…";
 
       fetch(
-        "https://script.google.com/macros/s/AKfycbwGtlTzyHtdVLLIIhlKdjBpvMH9mSeUyoTuCt85zanFlQuXijjFQ9tqrDMYaBzGtYXqBA/exec",
+        "https://script.google.com/a/macros/veridiandesign.in/s/AKfycbwrAqAcNAxg1OE18QO94se73FVtSdUhUWXyTm9SbvrCtD8qTXk0JcsfDjg5YeOo4_Ll/exec",
         {
           method: "POST",
           body: JSON.stringify({ type: "newsletter", email: email }),
